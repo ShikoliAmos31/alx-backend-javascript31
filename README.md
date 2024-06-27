@@ -1,99 +1,93 @@
-0x00. ES6 Basics
-JavaScript
-ES6
+0x00. Pascal's Triangle
+Algorithm
+Python
  Weight: 1
- Project will start Jun 24, 2024 6:00 AM, must end by Jun 25, 2024 6:00 AM
- Checker was released at Jun 24, 2024 12:00 PM
+ Project will start Jun 24, 2024 6:00 AM, must end by Jun 28, 2024 6:00 AM
+ Checker was released at Jun 25, 2024 6:00 AM
  An auto review will be launched at the deadline
-Concepts
-For this project, we expect you to look at these concepts:
-
-JavaScript programming
-Software Linter
-
-
 Resources
-Read or watch:
+What is Pascal’s triangle
+Pascal’s Triangle - Numberphile
+What are Python Algorithms
+Additional Resources
+Mock Technical Interview
+Must Know
+To successfully complete this project, you should revise the following Python concepts:
 
-ECMAScript 6 - ECMAScript 2015
-Statements and declarations
-Arrow functions
-Default parameters
-Rest parameter
-Javascript ES6 — Iterables and Iterators
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+Lists and List Comprehensions:
 
-What ES6 is
-New features introduced in ES6
-The difference between a constant and a variable
-Block-scoped variables
-Arrow functions and function parameters default to them
-Rest and spread function parameters
-String templating in ES6
-Object creation and their properties in ES6
-Iterators and for-of loops
-Requirements
-General
-All your files will be executed on Ubuntu 18.04 LTS using NodeJS 12.11.x
-Allowed editors: vi, vim, emacs, Visual Studio Code
-All your files should end with a new line
-A README.md file, at the root of the folder of the project, is mandatory
-Your code should use the js extension
-Your code will be tested using the Jest Testing Framework
-Your code will be analyzed using the linter ESLint along with specific rules that we’ll provide
-All of your functions must be exported
-Setup
-Install NodeJS 12.11.x
-(in your home directory):
+Understand how to create, access, modify, and iterate over lists.
+Utilize list comprehensions for more concise and readable code, especially for generating rows of Pascal’s Triangle.
+Functions:
 
-curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt install nodejs -y
-$ nodejs -v
-v12.11.1
-$ npm -v
-6.11.3
-Install Jest, Babel, and ESLint
-in your project directory, install Jest, Babel and ESList by using the supplied package.json and run npm install.
+Know how to define and call functions.
+Pass parameters and return values, particularly how to return a list of lists representing Pascal’s Triangle.
+Loops:
 
-Configuration files
-Add the files below to your project directory
+Use for and while loops to iterate through sequences.
+Nested loops may be necessary for generating each row and calculating the values of Pascal’s Triangle.
+Conditional Statements:
 
-package.json
-Click here to show/hide file contents
-babel.config.js
-Click here to show/hide file contents
-.eslintrc.js
-Click here to show/hide file contents
-Finally…
-Don’t forget to run npm install from the terminal of your project folder to install all necessary project dependencies.
+Apply if, elif, and else conditions to implement logic based on the position within Pascal’s Triangle (e.g., the edges of the triangle always being 1).
+Recursion (Optional):
+
+While not strictly necessary, understanding recursion can provide an alternative approach to generating Pascal’s Triangle.
+Recognize base cases and recursive cases for a function that generates the triangle’s rows.
+Arithmetic Operations:
+
+Perform addition, a fundamental operation for calculating each element of Pascal’s Triangle as the sum of the two elements directly above it.
+Indexing and Slicing:
+
+Access elements and slices of lists, crucial for identifying and summing the correct elements when constructing each row of the triangle.
+Memory Management:
+
+Be mindful of how lists are stored and copied, especially when creating new rows based on the values of the previous row.
+Error and Exception Handling (Optional):
+
+Use try-except blocks as needed to handle potential errors, such as invalid input types or values.
+Efficiency and Optimization:
+
+Consider the time and space complexity of different approaches to generating Pascal’s Triangle.
+Evaluate and apply optimizations to improve the performance of the solution.
+By revisiting these concepts, you will be well-prepared to tackle the challenges of implementing Pascal’s Triangle in Python, applying both your mathematical understanding and programming skills to develop an efficient and effective solution.
 
 Tasks
-0. Const or let?
+0. Pascal's Triangle
 mandatory
-Modify
+Create a function def pascal_triangle(n): that returns a list of lists of integers representing the Pascal’s triangle of n:
 
-function taskFirst to instantiate variables using const
-function taskNext to instantiate variables using let
-export function taskFirst() {
-  var task = 'I prefer const when I can.';
-  return task;
-}
+Returns an empty list if n <= 0
+You can assume n will be always an integer
+guillaume@ubuntu:~/0x00$ cat 0-main.py
+#!/usr/bin/python3
+"""
+0-main
+"""
+pascal_triangle = __import__('0-pascal_triangle').pascal_triangle
 
-export function getLast() {
-  return ' is okay';
-}
+def print_triangle(triangle):
+    """
+    Print the triangle
+    """
+    for row in triangle:
+        print("[{}]".format(",".join([str(x) for x in row])))
 
-export function taskNext() {
-  var combination = 'But sometimes let';
-  combination += getLast();
 
-  return combination;
-}
-Execution example:
+if __name__ == "__main__":
+    print_triangle(pascal_triangle(5))
 
-bob@dylan:~$ cat 0-main.js
-import { taskFirst, taskNext } from './0-constants.js';
+guillaume@ubuntu:~/0x00$ 
+guillaume@ubuntu:~/0x00$ ./0-main.py
+[1]
+[1,1]
+[1,2,1]
+[1,3,3,1]
+[1,4,6,4,1]
+guillaume@ubuntu:~/0x00$ 
+Repo:
 
+GitHub repository: alx-interview
+Directory: 0x00-pascal_triangle
+File: 0-pascal_triangle.py
+ 
 
